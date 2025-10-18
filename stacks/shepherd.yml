@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  shepherd:
+    image: containrrr/shepherd
+    environment:
+      TZ: 'Europe/Vienna'
+      SLEEP_TIME: '1h'
+      FILTER_SERVICES: ''
+      VERBOSE: 'true'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          

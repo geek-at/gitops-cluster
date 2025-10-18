@@ -1,0 +1,16 @@
+services:
+  dozzle:
+    image: amir20/dozzle:latest
+    environment:
+      - DOZZLE_MODE=swarm
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8080:8080
+    networks:
+      - dozzle
+    deploy:
+      mode: global
+networks:
+  dozzle:
+    driver: overlay
