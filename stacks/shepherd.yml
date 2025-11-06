@@ -5,7 +5,7 @@ services:
     image: containrrr/shepherd
     environment:
       TZ: 'Europe/Vienna'
-      SLEEP_TIME: '1h'
+      SLEEP_TIME: '6h'
       FILTER_SERVICES: ''
       VERBOSE: 'true'
     volumes:
